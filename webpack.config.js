@@ -12,11 +12,6 @@ const debug = process.env.NODE_ENV !== 'production';
 const pagesPath = './src/partials/pages/';
 const htmlPlugins = [];
 
-const extractSass = new MiniCssExtractPlugin({
-    filename: '[name].[contenthash].css',
-    disable: process.env.NODE_ENV === 'development'
-});
-
 const pages = fs.readdirSync(pagesPath);
 
 pages.forEach(file => {
@@ -56,7 +51,7 @@ module.exports = {
     devServer: {
         contentBase: './web'
     },
-    plugins: debug ? [
+    plugins: [
         new CleanWebpackPlugin(['web']),
         ...htmlPlugins,
         new CopyWebpackPlugin([{
@@ -69,18 +64,6 @@ module.exports = {
             filename: debug ? '[name].css' : '[name].[hash].css',
             chunkFilename: debug ? '[id].css' : '[id].[hash].css'
         }),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery'
-        })
-    ] : [
-        new CleanWebpackPlugin(['web']),
-        ...htmlPlugins,
-        new CopyWebpackPlugin([{
-            from: './src/img',
-            to: './img'
-        }]),
-        extractSass,
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
