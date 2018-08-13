@@ -1,12 +1,27 @@
 # Getting Started
+## Prerequisite
+We are using yarn to handle dependencies in this project. (More infos: https://yarnpkg.com/lang/en/)
 
-Building the files to `dist/`:
+## To build the files to `web/`:
+Using Make :
 ```bash
-npm install
-npm run build
+make build
 ```
-Dev environment (watcher):
+
+Using yarn (manually):
 ```bash
-npm install
-npm start
+yarn install
+NODE_ENV=production yarn run build
+```
+
+## To launch the development server :
+Using Make :
+```bash
+make run
+```
+
+Using yarn (manually) :
+```bash
+yarn install
+yarn run start
 ```

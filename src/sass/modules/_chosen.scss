@@ -1,0 +1,99 @@
+@import '~chosen-material-theme/src/chosen-material';
+@import '~chosen-js/chosen.css';
+// .chosen-container {
+//   &.chosen-container-single {
+//     .chosen-single {
+//       height: auto;
+//       padding: 8px 0;
+//       line-height: 1.4;
+//       font-size: 1rem;
+//       text-transform: uppercase;
+//       border-width: 1px;
+//       transition: border-color .2s ease-in-out;
+//       div b {
+//         display: block;
+//         background: none !important;
+//         position: relative;
+//         &:after {
+//           content: 'arrow_drop_down';
+//           position: absolute;
+//           font-family: "Material Icons";
+//           text-rendering: optimizeLegibility;
+//           font-feature-settings: 'liga' 1;
+//           font-style: normal;
+//           color: #DDD;
+//           text-transform: none;
+//           line-height: 1;
+//           font-size: 20px;
+//           width: 20px;
+//           height: 20px;
+//           text-align: center;
+//           overflow: hidden;
+//           -webkit-font-smoothing: antialiased;
+//           transition: color .2s ease-in-out;
+//           bottom: 15px;
+//         }
+//       }
+//     }
+//     &.chosen-container-active {
+//       .chosen-single {
+//         border-color: $secondary-color;
+//       }
+//       div b {
+//         &:after {
+//           color: $secondary-color;
+//         }
+//       }
+//     }
+//     &.chosen-with-drop {
+//       div b {
+//         &:after {
+//           content: 'arrow_drop_up';
+//         }
+//       }
+//     }
+//   }
+//   .chosen-drop {
+//     li.active-result {
+//       padding: 10px 20px;
+//     }
+//     li.highlighted {
+//       background-color: $secondary-color;
+//     }
+//   }
+//   .chosen-results li:hover,
+//   .chosen-results li.active-result:hover,
+//   .chosen-results li.highlighted {
+//     background-color: $secondary-color;
+//   }
+// }
+
+// .chosen-single {
+//   .bmd-form-group {
+//     display: none !important;
+//   }
+// }
+
+// .md-form {
+//   .chosen-container {
+//     &.chosen-container-single {
+//       .chosen-single {
+//         color: black;
+//         text-transform: initial;
+//         border-bottom: 1px solid black;
+//         padding-top: 0;
+//         div b {
+//           &:after {
+//             color: black;
+//           }
+//         }
+//       }
+//     }
+//     .chosen-results li:hover,
+//     .chosen-results li.active-result:hover,
+//     .chosen-results li.highlighted {
+//       background-color: $secondary-color;
+//     }
+//   }
+// }
+

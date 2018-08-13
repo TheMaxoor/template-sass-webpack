@@ -1,0 +1,115 @@
+@import "~bootstrap-material-design/scss/variables";
+@import "~bootstrap-material-design/scss/mixins";
+.form-control {
+    background: $bmd-form-control-bg-repeat-y $bmd-form-control-bg-position;
+    background-size: $bmd-form-control-bg-size;
+    border: 0;
+    transition: background 0s ease-out;
+    padding-left: 0;
+    padding-right: 0; // The border bottom should be static in all states, the decorator will be animated over this.
+    &:focus,
+    .bmd-form-group.is-focused & {
+        background-size: $bmd-form-control-bg-size-active; //border-bottom: $input-btn-border-width solid $input-border-color;
+        transition-duration: 0.3s;
+    }
+}
+
+.has-success {
+    @include bmd-form-color(theme-color(success), theme-color(success), theme-color(success));
+}
+
+.has-info {
+    @include bmd-form-color(theme-color(info), theme-color(info), theme-color(info));
+}
+
+.has-warning {
+    @include bmd-form-color(theme-color(warning), theme-color(warning), theme-color(warning));
+}
+
+.has-danger {
+    @include bmd-form-color(theme-color(danger), theme-color(danger), theme-color(danger));
+}
+
+.bmd-form-group {
+    position: relative; // -----
+    // Labels
+    //
+    // Reference http://www.google.com/design/spec/components/text-fields.html
+    // MDL implementation: http://www.getmdl.io/components/index.html#textfields-section
+    [class^='bmd-label'],
+    [class*=' bmd-label'] {
+        position: absolute;
+        pointer-events: none;
+        transition: 0.3s ease all; // hint to browser for optimization
+        &.bmd-label-floating {
+            will-change: left, top, contents; // TODO: evaluate effectiveness - looking for community feedback
+        }
+    } // hide label-placeholders when the field is filled
+    &.is-filled .bmd-label-placeholder {
+        display: none;
+    } // Optional class to make the text field inline collapsible/expandable (collapsed by default)
+    //    This uses the BS collapse js to make the width expand.
+    //    `width` class must also be on the element FIXME: do this with JS, it is a marker class and should be implicit because after all, we are an bmd-collapse-inline
+    //    FIXME: js needs to do the focus on shown.bs.collapse event http://v4-alpha.getbootstrap.com/components/collapse/#events
+    &.bmd-collapse-inline {
+        display: flex;
+        align-items: center;
+        padding: 0; // get rid of any padding as this is a width transition
+        min-height: 2.1em; // Expandable Holder.
+        .collapse {
+            flex: 1;
+            display: none;
+            &.show {
+                // This is an unfortunate hack. Animating between widths in percent (%)
+                // in many browsers (Chrome, Firefox) only animates the inner visual style
+                // of the input - the outer bounding box still 'jumps'.
+                // Thus assume a sensible maximum, and animate to/from that value.
+                max-width: 1200px;
+            }
+        }
+        .collapsing,
+        .width:not(.collapse), // collapsing is removed and momentarily only width is present
+        .collapse.show {
+            display: block;
+        }
+        .collapsing {
+            @include material-animation-default();
+        }
+    } // default floating size/location with an bmd-form-group
+    @include bmd-form-size-variant($font-size-base, $bmd-label-top-margin-base, $input-padding-y, $bmd-form-line-height, "bmd-form-group default"); // sm floating size/location
+    &.bmd-form-group-sm {
+        @include bmd-form-size-variant($font-size-sm, $bmd-label-top-margin-sm, $input-padding-y-sm, $bmd-form-line-height-sm, "bmd-form-group sm");
+    } // lg floating size/location
+    &.bmd-form-group-lg {
+        @include bmd-form-size-variant($font-size-lg, $bmd-label-top-margin-lg, $input-padding-y-lg, $bmd-form-line-height-sm, "bmd-form-group lg");
+    }
+}
+
+.form-control {
+    border-radius: 0;
+    &:focus {
+        border: none;
+        box-shadow: none;
+    }
+}
+
+.is-focused [class^='bmd-label'],
+.is-focused [class*=' bmd-label'],
+.is-focused [class^='bmd-label'],
+.is-focused [class*=' bmd-label'] {
+    //color: $secondary-color;
+}
+
+[class^='bmd-label'],
+[class*=' bmd-label'] {
+    color: black;
+}
+
+.form-control,
+.is-focused .form-control {
+    //background-image: linear-gradient(to top, $secondary-color 2px, rgba(0, 123, 255, 0) 2px), linear-gradient(to top, black 1px, rgba(206, 212, 218, 0) 1px);
+}
+
+.form-control:invalid {
+    //background-image: linear-gradient(to top, $secondary-color 2px, rgba(213, 0, 0, 0) 2px), linear-gradient(to top, black 1px, rgba(206, 212, 218, 0) 1px);
+}

@@ -1,7 +1,7 @@
 module.exports = {
     plugins: {
-        'postcss-import': {},
-        'postcss-preset-env': {},
-        'autoprefixer': {},
+        // include whatever plugins you want
+        // but make sure you install these via yarn or npm!
+        autoprefixer: {}
     }
 }
