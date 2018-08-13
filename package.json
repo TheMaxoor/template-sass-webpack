@@ -1,6 +1,6 @@
 {
-    "name": "ffs-carte-neige",
-    "version": "0.2.0",
+    "name": "template-sass-webpack",
+    "version": "0.3.0",
     "description": "",
     "main": "./src/js/index.js",
     "devDependencies": {
@@ -38,18 +38,14 @@
         "webpack-dev-server": "^3.1.5"
     },
     "dependencies": {
-        "bootstrap": "^4.0.0-beta.3",
-        "bootstrap-datepicker": "^1.7.1",
+        "bootstrap": "^4.0.0",
         "bootstrap-material-design": "^4.1.1",
-        "chosen-js": "^1.8.3",
         "chosen-material-theme": "^1.0.0",
         "exports-loader": "^0.7.0",
         "font-awesome": "^4.7.0",
-        "icheck": "^1.0.2",
         "jquery": "^3.2.1",
         "material-design-icons": "^3.0.1",
-        "popper.js": "^1.12.9",
-        "selectize": "^0.12.4"
+        "popper.js": "^1.12.9"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
