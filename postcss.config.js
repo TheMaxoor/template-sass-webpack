@@ -4,4 +4,4 @@ module.exports = {
         // but make sure you install these via yarn or npm!
         autoprefixer: {}
     }
-}
+};

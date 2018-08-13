@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const fs = require('fs')
+const fs = require('fs');
 
 const debug = process.env.NODE_ENV !== 'production';
 const pagesPath = './src/partials/pages/';
@@ -15,9 +15,9 @@ const htmlPlugins = [];
 const extractSass = new MiniCssExtractPlugin({
     filename: '[name].[contenthash].css',
     disable: process.env.NODE_ENV === 'development'
-})
+});
 
-const pages = fs.readdirSync(pagesPath)
+const pages = fs.readdirSync(pagesPath);
 
 pages.forEach(file => {
     htmlPlugins.push(
@@ -25,8 +25,8 @@ pages.forEach(file => {
             filename: file.slice(0, -5),
             template: pagesPath + file
         })
-    )
-})
+    );
+});
 
 module.exports = {
     mode: debug ? 'development' : 'production',
@@ -134,4 +134,4 @@ module.exports = {
             }
         ]
     }
-}
+};
